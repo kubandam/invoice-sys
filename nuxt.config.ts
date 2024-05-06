@@ -14,4 +14,5 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ["@/server/db/index.ts"]
   },
+  plugins: ['@/plugins/export.ts']
 })

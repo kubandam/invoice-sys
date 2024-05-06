@@ -12,10 +12,11 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.19",
-    "bootstrap": "^5.3.3",
     "@pinia/nuxt": "^0.5.1",
     "@vee-validate/rules": "^4.12.6",
+    "bootstrap": "^5.3.3",
     "dayjs": "^1.11.10",
+    "fs-extra": "^11.2.0",
     "joi": "^17.12.3",
     "mongoose": "^8.3.0",
     "nuxt-icon": "^0.6.10",
@@ -26,9 +27,9 @@
   },
   "devDependencies": {
     "fibers": "^5.0.3",
+    "nuxt": "^3.11.2",
     "sass": "^1.76.0",
-    "sass-loader": "^10.5.2",
-    "nuxt": "^3.11.2"
+    "sass-loader": "^10.5.2"
   },
   "overrides": {
     "vue": "latest"
