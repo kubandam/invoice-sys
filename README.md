@@ -21,12 +21,5 @@ Open
 
 Try create a user to test the database
 
-## Endpoints
-
-`index` [/](http://localhost:3000/) <br/>
-`users index` [/api/users](http://localhost:3000/api/users) <br/>
-`users create` [/api/users/create]() <br/>
-`users delete` [/api/users/[id]]() <br/>
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
