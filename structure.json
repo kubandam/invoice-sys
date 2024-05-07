@@ -1,0 +1,43 @@
+{
+    "user": {
+        "_id": "string",
+        "company_id": "string (company._id reference)",
+        "name": "string",
+        "email": "string (email format)",
+        "password": "string (hashed/encrypted)",
+        "phone": "string (phone format)",
+        "timestamp": "date"
+    },
+    "?client?":{
+        "_id": "string",
+        "company_id": "string (company._id reference)",
+        "name": "string",
+        "timestamp": "date"
+    },
+    "?company?":{
+        "_id": "string",
+        "ico": "string (ico format)",
+        "dic": "string (dic format)",
+        "icdph": "string (icdph format)",
+        "address": "string",
+        "zip": "string (zip format)",
+        "town": "string",
+        "country": "string"
+    },
+    "?client-user?":{
+        "user_id": "string (user._id reference)",
+        "client_id": "string (client._id reference)"
+    },
+    "?bank?":{
+        "_id": "string",
+        "name": "string",
+        "number": "string",
+        "iban": "string (iban format)",
+        "swift": "string (swift format)",
+        "currency": "string"
+    },
+    "?bank-user?":{
+        "user_id": "string (user._id reference)",
+        "bank_id": "string (bank._id reference)"
+    }
+}

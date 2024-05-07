@@ -1,0 +1,128 @@
+{
+    "user":{
+        "GET /users/{id}": { 
+            "description": "Retrieve a single user by ID",
+            "conditions": "This should return also company data ('GET /companies/{company_id}')"
+        },
+        "POST /users": {
+            "description": "Register a new user (Sign Up)",
+            "body": {
+                "name": "string",
+                "email": "string",
+                "password": "string"
+            }
+        },
+        "PUT /users/{id}": {
+            "description": "Update an existing user (in profile) and associate a company with an existing user",
+            "body": {
+                "company_id": "string",
+                "name": "string",
+                "email": "string",
+                "password": "string",
+                "phone": "string"
+            }
+        }
+    },
+    "?client?":{
+        "GET /clients/{client_id}": { "description": "Retrieve a single client by ID" },
+        "POST /users/{user_id}/clients": {
+            "description": "Create a new client and associate it with the user",
+            "steps": "Crete company 'POST /companies' then create client and associate with user (create cleint-user)",
+            "body": {
+                "name": "string",
+                "company_info": {
+                    "ico": "string",
+                    "dic": "string",
+                    "icdph": "string",
+                    "address": "string",
+                    "zip": "string",
+                    "town": "string",
+                    "country": "string"
+                }
+            }
+        },
+        "PUT /users/{user_id}/clients/{id}": {
+            "description": "Update an existing client by ID",
+            "steps": "Get client -> get company_id and update company info with 'PUT /companies/{id}'",
+            "body": {
+                "name": "string",
+                "company_info": {
+                    "ico": "string",
+                    "dic": "string",
+                    "icdph": "string",
+                    "address": "string",
+                    "zip": "string",
+                    "town": "string",
+                    "country": "string"
+                }
+            }
+        },
+        "DELETE /users/{user_id}/clients/{id}": { 
+            "description": "Delete a client by ID",
+            "steps": "Get client -> get company_id -> delete company ('DELETE /companies/{id}') and then delete client and client-user connection"
+        }
+    },
+    "?company?":{
+        "GET /companies/{id}": { "description": "Retrieve a single company by ID" },
+        "POST /companies": {
+            "description": "Create a new company and associate it with the user or client",
+            "body": {
+                "ico": "string",
+                "dic": "string",
+                "icdph": "string",
+                "address": "string",
+                "zip": "string",
+                "town": "string",
+                "country": "string"
+            }
+        }
+        ,
+        "PUT /companies/{id}": {
+            "description": "Update an existing company by ID",
+            "body": {
+                "ico": "string",
+                "dic": "string",
+                "icdph": "string",
+                "address": "string",
+                "zip": "string",
+                "town": "string",
+                "country": "string"
+            }
+        },
+        "DELETE /companies/{id}": { 
+            "description": "Delete a company by ID",
+            "conditions": "Company can be deleted only when is client deleted, for user cant be deleted only modified"
+        }
+    },
+    "?bank?":{
+        "GET /users/{user_id}/banks/": { "description": "Retrieve all user banks" },
+        "GET /users/{user_id}/banks/{bank_id}": { "description": "Retrieve a single user bank" },
+        "POST /users/{user_id}/banks": {
+            "description": "Create a new bank and associate it with the user",
+            "body": {
+                "name": "string",
+                "number": "string",
+                "iban": "string",
+                "swift": "string",
+                "currency": "string"
+            }
+        },
+        "PUT /users/{user_id}/banks/{bank_id}": {
+            "description": "Update an existing bank by ID",
+            "body": {
+                "name": "string",
+                "number": "string",
+                "iban": "string",
+                "swift": "string",
+                "currency": "string"
+            }
+        },
+        "DELETE /users/{user_id}/banks/{bank_id}": { 
+            "description": "Delete a bank by ID",
+            "steps": "First delete connection bank-user then delete bank"
+        }
+    }
+    
+    
+    
+}
