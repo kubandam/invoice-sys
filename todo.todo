@@ -1,10 +1,11 @@
 Project:
+    - *Before every git push make all TODO changes*
     - @structure `structure.json`
     - @endpoints `endpoints.json`
     - @critical - use @endpoints and @structure from files or overwrite files
     Todos:
         ✔ Basic Auth @done(24-05-09 23:17)
-        ☐ Make `/profile` to see and edit user information (name,phone number)
+        ☐ Make `/profile` to see and edit user information (name,phone number) 
         ☐ Create `companyStore` to handle company data (@structure)
         ☐ Make form in `/profile` to fill company information (@structure, @endpoints)
         ☐ Handle connection between `user` and `company`  (@structure, @endpoints)
