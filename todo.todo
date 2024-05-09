@@ -1,0 +1,17 @@
+Projects:
+    - @structure `structure.json`
+    - @endpoints `endpoints.json`
+    - @critical - use @endpoints and @structure from files or overwrite files
+    Todos:
+        ✔ Basic Auth @done(24-05-09 23:17)
+        ☐ Make `/profile` to see and edit user information (name,phone number)
+        ☐ Create `companyStore` to handle company data (@structure)
+        ☐ Make form in `/profile` to fill company information (@structure, @endpoints)
+        ☐ Handle connection between `user` and `company`  (@structure, @endpoints)
+        ☐ Create `bankStore` to handle bank data (@structure)
+        ☐ Make form in `/profile` to fill bank information (@structure, @endpoints)
+        ☐ Handle connection between `user` and `bank`  (@structure, @endpoints)
+    Comments:
+        - Alt+D change state of TODO
+        - LCTRL+Enter create TODO box
+        - Alt+S label TODO item as started
