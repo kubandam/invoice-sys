@@ -21,6 +21,7 @@
     "mongoose": "^8.3.0",
     "nuxt-icon": "^0.6.10",
     "pinia": "^2.1.7",
+    "uuid": "^9.0.1",
     "vee-validate": "^4.12.6",
     "vue-toastification": "next",
     "vue3-easy-data-table": "^1.5.47"

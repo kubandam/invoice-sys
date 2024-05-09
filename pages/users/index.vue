@@ -30,7 +30,10 @@
     </div>
   </template>
   
-  <script setup>
+  <script lang="ts" setup>
+  definePageMeta({
+    middleware: 'auth'
+  })
   import { ref, onMounted } from 'vue';
   import { useUserStore } from '@/composables/userStore';
   
