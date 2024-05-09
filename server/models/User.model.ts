@@ -14,6 +14,10 @@ const schema: mongoose.Schema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    phone: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );
