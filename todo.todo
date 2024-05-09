@@ -1,4 +1,4 @@
-Projects:
+Project:
     - @structure `structure.json`
     - @endpoints `endpoints.json`
     - @critical - use @endpoints and @structure from files or overwrite files
@@ -11,7 +11,10 @@ Projects:
         ☐ Create `bankStore` to handle bank data (@structure)
         ☐ Make form in `/profile` to fill bank information (@structure, @endpoints)
         ☐ Handle connection between `user` and `bank`  (@structure, @endpoints)
+    Archive:
+        - Remake/Improve auth
     Comments:
         - Alt+D change state of TODO
         - LCTRL+Enter create TODO box
         - Alt+S label TODO item as started
+        - Todo+ (https://github.com/fabiospampinato/vscode-todo-plus/tree/master)
