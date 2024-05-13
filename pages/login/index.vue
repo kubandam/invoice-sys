@@ -4,17 +4,20 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
               <form @submit.prevent="login">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="name" id="name" v-model="user.username" required class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" v-model="user.password" required class="form-control">
-                </div>
-                
-                <button type="submit" class="btn btn-primary mt-3 d-flex justify-content-center w-25 mx-auto">Login</button>
+                    <v-text-field
+                    hide-details="auto"
+                    label="Name"
+                    v-model="user.username"
+                  ></v-text-field>
+                  <v-text-field
+                  hide-details="auto"
+                  label="Password"
+                  class="mt-5"
+                  v-model="user.password"
+                ></v-text-field>
+                <v-btn type="submit" prepend-icon="$vuetify" class="mt-5">
+                  Login
+                </v-btn>
               </form>
             </div>
         </div>

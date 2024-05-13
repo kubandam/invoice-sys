@@ -1,8 +1,10 @@
 <template>
-  <div class="container mt-4">
-    <Navbar />
-    <NuxtPage />
-  </div>
+  <v-app>
+    <div class="container mt-4">
+      <Navbar />
+      <NuxtPage />
+    </div>
+  </v-app>
 </template>
 
 <script>
@@ -11,4 +13,3 @@ export default {
   components: { Navbar }
 }
 </script>
-
