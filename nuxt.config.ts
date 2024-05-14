@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: [
+    '@nuxt/ui',
     '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
@@ -32,7 +33,6 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ["@/server/db/index.ts"]
   },
-  plugins: ['@/plugins/export.ts'],
   build: {
     transpile: ['vuetify'],
   },
@@ -42,5 +42,5 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
-  },
+  },  
 })

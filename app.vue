@@ -4,6 +4,11 @@
       <Navbar />
       <NuxtPage />
     </div>
+    <UNotifications 
+      :ui="{
+        strategy: 'override',
+        position: 'top-0 bottom-auto right-0'
+      }"/>
   </v-app>
 </template>
 

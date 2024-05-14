@@ -5,3 +5,13 @@ export interface IUser {
   _id?: string;
   phone?: string;
 }
+export interface ICompany {
+  _id: string,
+  ico: string,
+  dic: string,
+  icdph?: string,
+  address: string,
+  zip: string,
+  town: string,
+  country: string,
+}  

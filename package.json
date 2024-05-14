@@ -28,6 +28,7 @@
     "vue3-easy-data-table": "^1.5.47"
   },
   "devDependencies": {
+    "@nuxt/ui": "^2.16.0",
     "@nuxtjs/vuetify": "^1.12.3",
     "fibers": "^5.0.3",
     "nuxt": "^3.11.2",
