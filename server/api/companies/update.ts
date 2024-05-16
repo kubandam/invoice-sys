@@ -3,9 +3,8 @@ import { CompanySchema } from "~~/server/validation";
 
 export default defineEventHandler(async (event: any) => {
     const body = await readBody(event);
-    const companyId = event.context.params.companyId;
-
-    let { value, error } = CompanySchema.validate(body);
+    const {companyData, companyID} = body
+    let { value, error } = CompanySchema.validate(companyData);
     if (error) {
         throw createError({
             message: error.message.replace(/"/g, ''), 
@@ -14,7 +13,7 @@ export default defineEventHandler(async (event: any) => {
         });
     }
     try {
-        const updatedCompany = await CompanyModel.findByIdAndUpdate(companyId, value, { new: true });
+        const updatedCompany = await CompanyModel.findByIdAndUpdate(companyID, value, { new: true });
         if (!updatedCompany) {
             throw createError({ 
                 message: 'Company not found',

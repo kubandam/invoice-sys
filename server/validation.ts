@@ -7,12 +7,7 @@ export const UserSchema = Joi.object({
 });
 
 export const CompanySchema = Joi.object({
-  user_id: Joi.string()
-    .required()
-    .messages({
-      'string.base': 'User ID must be a string.',
-      'any.required': 'User ID is required.'
-    }),
+  user_id: Joi.string(),
   ico: Joi.string()
     .pattern(new RegExp("^[0-9]{8}$"))
     .required()

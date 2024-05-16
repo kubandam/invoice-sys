@@ -23,7 +23,13 @@
             <v-text-field v-model="company.address" label="Address" class="mt-3" required></v-text-field>
             <v-text-field v-model="company.zip" label="ZIP" class="mt-3" required></v-text-field>
             <v-text-field v-model="company.town" label="Town" class="mt-3" required></v-text-field>
-            <v-text-field v-model="company.country" label="Country" class="mt-3" required></v-text-field>
+            <v-combobox
+              label="Country"
+              v-model="company.country"
+              :items="['Slovakia', 'Czech Republic']"
+              class="mt-3"
+              required
+            ></v-combobox>
             <v-btn color="success" variant="outlined" type="submit" size="large" class="mt-3">
               Save
             </v-btn>
@@ -78,7 +84,7 @@ const company = ref<Company>({
   address: '',
   zip: '',
   town: '',
-  country: ''
+  country: 'Slovakia'
 });
 
 const phoneValidation = (value: string) => {
@@ -99,6 +105,19 @@ const saveUser  = async () => {
     }
   }
 };
+
+const loadCompanyData = async () => {
+  try {
+    const companyData = await companyStore.fetchCompanyData(company.value.user_id);
+    company.value = { user_id: company.value.user_id, ...companyData };
+  } catch (error) {
+    toast.add({ title: 'Error', description: 'Failed to fetch company data', color: 'red' });
+  }
+};
+
+onMounted(() => {
+  loadCompanyData();
+});
 
 const saveCompany = async () => {
   try {
